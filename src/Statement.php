@@ -147,7 +147,7 @@ class Statement implements \IteratorAggregate, DriverStatement
      *
      * @return mixed
      */
-    public function fetch($fetchMode = null)
+    public function fetch($fetchMode = null, $cursorOrientation = PDO::FETCH_ORI_NEXT, $cursorOffset = 0)
     {
         return $this->stmt->fetch($fetchMode);
     }
@@ -158,7 +158,7 @@ class Statement implements \IteratorAggregate, DriverStatement
      *
      * @return mixed
      */
-    public function fetchAll($fetchMode = null, $fetchArgument = 0)
+    public function fetchAll($fetchMode = null, $fetchArgument = null, $ctorArgs = null)
     {
         return $this->stmt->fetchAll($fetchMode, $fetchArgument);
     }
